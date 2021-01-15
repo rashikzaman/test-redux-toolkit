@@ -1,17 +1,18 @@
 import React, {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {updateName, getName} from '../stores/user'
+import {updateName, getName, getNameReselector} from '../stores/user'
 
 export default function Name() {
     const dispatch = useDispatch()
-    const name = useSelector( state => getName(state))
+    //const name = useSelector( state => getNameReselector(state))
+    const name = useSelector( state => getName(state) )
     const [value, setValue] = useState("")
 
     const handleName = () => {
         dispatch(updateName(value))
     }
 
-    console.log(name)
+    console.log('name')
     
 
     return (

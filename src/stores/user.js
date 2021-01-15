@@ -15,5 +15,10 @@ const slice = createSlice({
     },
   },
 });
+
+export const getName = (state) => state.user.name
+
+export const getEmail = (state) => state.user.email
+
 export default slice.reducer
 export const {updateEmail, updateName} = slice.actions

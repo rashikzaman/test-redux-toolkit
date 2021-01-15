@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {updateEmail} from '../stores/user'
+import {updateEmail, getEmail} from '../stores/user'
 
 export default function Email() {
     const dispatch = useDispatch()
-    const { email } = useSelector(state => state.user)
+    const email = useSelector(state => getEmail(state))
     const [value, setValue] = useState("")
 
     const handleEmail = () => {
